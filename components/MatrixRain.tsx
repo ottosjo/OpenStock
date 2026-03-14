@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 
 const FONT_SIZE = 16;
@@ -18,6 +18,10 @@ export default function MatrixRain() {
     const { theme } = useTheme();
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const animIdRef = useRef<number>(0);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => setMounted(true), []);
+    if (!mounted) return null;
 
     useEffect(() => {
         if (theme !== "matrix") return;
