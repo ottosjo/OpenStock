@@ -31,6 +31,7 @@ export default function SirayBanner() {
                 <button
                     onClick={() => setIsVisible(false)}
                     className="text-teal-400 hover:text-white transition-colors p-1"
+                    suppressHydrationWarning
                 >
                     <X size={14} />
                 </button>
