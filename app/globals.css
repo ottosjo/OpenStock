@@ -112,6 +112,52 @@
     --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+.matrix {
+    --background: oklch(from #000000 l c h);
+    --foreground: oklch(from #00FF41 l c h);
+    --card: oklch(from #050f05 l c h);
+    --card-foreground: oklch(from #00FF41 l c h);
+    --popover: oklch(from #050f05 l c h);
+    --popover-foreground: oklch(from #00FF41 l c h);
+    --primary: oklch(from #00FF41 l c h);
+    --primary-foreground: oklch(from #000000 l c h);
+    --secondary: oklch(from #0a1a0a l c h);
+    --secondary-foreground: oklch(from #00FF41 l c h);
+    --muted: oklch(from #0a1a0a l c h);
+    --muted-foreground: oklch(from #1a6b1a l c h);
+    --accent: oklch(from #008F11 l c h);
+    --accent-foreground: oklch(from #00FF41 l c h);
+    --destructive: oklch(from #FF3333 l c h);
+    --border: oklch(from #0d2b0d l c h);
+    --input: oklch(from #0d2b0d l c h);
+    --ring: oklch(from #00FF41 l c h);
+    --chart-1: oklch(from #00FF41 l c h);
+    --chart-2: oklch(from #008F11 l c h);
+    --chart-3: oklch(from #00cc33 l c h);
+    --chart-4: oklch(from #FF3333 l c h);
+    --chart-5: oklch(from #1a6b1a l c h);
+    --sidebar: oklch(from #050f05 l c h);
+    --sidebar-foreground: oklch(from #00FF41 l c h);
+    --sidebar-primary: oklch(from #00FF41 l c h);
+    --sidebar-primary-foreground: oklch(from #000000 l c h);
+    --sidebar-accent: oklch(from #0a1a0a l c h);
+    --sidebar-accent-foreground: oklch(from #00FF41 l c h);
+    --sidebar-border: oklch(from #0d2b0d l c h);
+    --sidebar-ring: oklch(from #00FF41 l c h);
+
+    /* Override custom gray scale for matrix */
+    --color-gray-900: #000000;
+    --color-gray-800: #050f05;
+    --color-gray-700: #0a1a0a;
+    --color-gray-600: #0d2b0d;
+    --color-gray-500: #1a6b1a;
+    --color-gray-400: #00FF41;
+    --color-blue-600: #00FF41;
+    --color-teal-400: #00FF41;
+    --color-teal-500: #008F11;
+    --color-red-500: #FF3333;
+}
+
 /* === CUSTOM COLOR THEME === */
 @theme {
     /* Extended Gray Scale */
@@ -130,6 +176,14 @@
     --color-red-500: #FF495B;
     --color-orange-500: #FF8243;
     --color-purple-500: #D13BFF;
+    /* Matrix Colors */
+    --color-matrix-green: #00FF41;
+    --color-matrix-mid: #008F11;
+    --color-matrix-dim: #1a6b1a;
+    --color-matrix-bg: #000000;
+    --color-matrix-surface: #050f05;
+    --color-matrix-elevated: #0a1a0a;
+    --color-matrix-border: #0d2b0d;
 }
 
 @layer base {
@@ -486,4 +540,20 @@
 
 .scrollbar-hide-default::-webkit-scrollbar-thumb:hover {
     background-color: #9095A1;
+}
+
+/* Matrix TradingView overrides */
+.matrix .tradingview-widget-container {
+    background-color: #050f05 !important;
+}
+.matrix .tv-embed-widget-wrapper__body,
+.matrix .tradingview-widget-container__widget,
+.matrix .canvasContainer-tyaAU8aH,
+.matrix .widget-stock-heatmap-container .screenerMapWrapper-BBVfGP0b,
+.matrix .tv-embed-widget-wrapper .tv-embed-widget-wrapper__body,
+.matrix .tradingview-widget-container iframe {
+    background-color: #050f05 !important;
+}
+.matrix .custom-chart.tradingview-widget-container iframe {
+    border-color: #0d2b0d !important;
 }
