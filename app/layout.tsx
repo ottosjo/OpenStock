@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "next-themes";
+import MatrixRain from "@/components/MatrixRain";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -34,6 +35,7 @@ export default function RootLayout({
           themes={["dark", "matrix"]}
           disableTransitionOnChange
         >
+          <MatrixRain />
           {children}
           <Toaster />
           <Analytics />
