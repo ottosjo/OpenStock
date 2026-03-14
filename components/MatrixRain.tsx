@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 
 const FONT_SIZE = 16;
-const OPACITY = 0.30;
 
 const katakana = Array.from({ length: 96 }, (_, i) => String.fromCharCode(0x30a0 + i));
 const digits = "0123456789".split("");
@@ -46,7 +45,7 @@ export default function MatrixRain() {
                     const x = i * FONT_SIZE;
                     const y = drops[i] * FONT_SIZE;
                     const isLeading = drops[i] * FONT_SIZE > canvas.height * 0.95 || Math.random() > 0.95;
-                    ctx.fillStyle = isLeading ? "#aaffbb" : "#00FF41";
+                    ctx.fillStyle = isLeading ? "rgba(170,255,187,0.9)" : "rgba(0,255,65,0.35)";
                     ctx.fillText(char, x, y);
                     if (y > canvas.height && Math.random() > 0.975) {
                         drops[i] = 0;
@@ -87,7 +86,6 @@ export default function MatrixRain() {
                 left: 0,
                 width: "100vw",
                 height: "100vh",
-                opacity: OPACITY,
                 pointerEvents: "none",
                 zIndex: 1,
             }}
