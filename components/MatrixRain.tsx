@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 
 const FONT_SIZE = 16;
-const OPACITY = 0.12;
+const OPACITY = 0.30;
 
 const katakana = Array.from({ length: 96 }, (_, i) => String.fromCharCode(0x30a0 + i));
 const digits = "0123456789".split("");
@@ -89,7 +89,7 @@ export default function MatrixRain() {
                 height: "100vh",
                 opacity: OPACITY,
                 pointerEvents: "none",
-                zIndex: 0,
+                zIndex: 1,
             }}
             aria-hidden="true"
         />
