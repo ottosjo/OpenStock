@@ -21,10 +21,9 @@ export default function MatrixRain() {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => setMounted(true), []);
-    if (!mounted) return null;
 
     useEffect(() => {
-        if (theme !== "matrix") return;
+        if (!mounted || theme !== "matrix") return;
 
         const canvas = canvasRef.current;
         if (!canvas) return;
@@ -75,9 +74,9 @@ export default function MatrixRain() {
             cancelAnimationFrame(animIdRef.current);
             window.removeEventListener("resize", resize);
         };
-    }, [theme]);
+    }, [theme, mounted]);
 
-    if (theme !== "matrix") return null;
+    if (!mounted || theme !== "matrix") return null;
 
     return (
         <canvas
